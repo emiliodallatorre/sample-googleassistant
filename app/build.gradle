@@ -20,7 +20,7 @@ android {
     compileSdkVersion 27
 
     defaultConfig {
-        applicationId "com.example.androidthings.assistant"
+        applicationId "gq.emiliodallatorre.HAL-9000"
         minSdkVersion 27
         targetSdkVersion 27
         versionCode 1

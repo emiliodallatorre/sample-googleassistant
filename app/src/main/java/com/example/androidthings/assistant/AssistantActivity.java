@@ -66,9 +66,9 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
     private static final int DEFAULT_VOLUME = 100;
 
     // Assistant SDK constants.
-    private static final String DEVICE_MODEL_ID = "PLACEHOLDER";
+    private static final String DEVICE_MODEL_ID = "capable-hangout-205409-hal-terminal-wz7sz3";
     private static final String DEVICE_INSTANCE_ID = "PLACEHOLDER";
-    private static final String LANGUAGE_CODE = "en-US";
+    private static final String LANGUAGE_CODE = "it-IT";
 
     // Hardware peripherals.
     private Button mButton;
@@ -122,11 +122,11 @@ public class AssistantActivity extends Activity implements Button.OnButtonEventL
         AudioDeviceInfo audioInputDevice = null;
         AudioDeviceInfo audioOutputDevice = null;
         if (USE_VOICEHAT_I2S_DAC) {
+            audioOutputDevice = findAudioDevice(AudioManager.GET_DEVICES_OUTPUTS, AudioDeviceInfo.TYPE_BUILTIN_SPEAKER);
             audioInputDevice = findAudioDevice(AudioManager.GET_DEVICES_INPUTS, AudioDeviceInfo.TYPE_BUS);
             if (audioInputDevice == null) {
                 Log.e(TAG, "failed to find I2S audio input device, using default");
             }
-            audioOutputDevice = findAudioDevice(AudioManager.GET_DEVICES_OUTPUTS, AudioDeviceInfo.TYPE_BUS);
             if (audioOutputDevice == null) {
                 Log.e(TAG, "failed to found I2S audio output device, using default");
             }
